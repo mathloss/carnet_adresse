@@ -2,5 +2,37 @@
 
 
 {% block content %}
-<h1>Ajouter un contact : </h1>
+	<h1>Ajouter un contact : </h1>
+	<br/>
+
+	<form method = "POST">
+		{% csrf_token %}
+
+	  <div class="mb-3">	    
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nom / Prénom" name = "nom">
+	  </div>
+
+	  <div class="mb-3">
+  		<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name = "email">  
+  	  </div>	  
+	
+	  <div class="mb-3">	    
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse" name = "adresse">
+	  </div>
+
+	  <div class="mb-3">	    
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ville" name = "ville">
+	  </div>
+
+	  <div class="mb-3">	    
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Code Postal" name = "code_postal">
+	  </div>
+
+	  <div class="mb-3">	    
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Téléphone" name = "telephone">
+	  </div>	   
+	  <br/>
+	  <button type="submit" class="btn btn-secondary">Ajouter le contact</button>
+	</form>
+
 {% endblock %}

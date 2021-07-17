@@ -2,5 +2,31 @@
 
 
 {% block content %}
-<h1>Contacts :</h1>
+<div class="container">
+	<div class="row">
+		
+	{% if all_adresses %}
+		{% for perso in all_adresses %}
+			<div class="col-sm">
+				<div class="card" style="width: 18rem;">		  
+					<div class="card-body">
+						<h5 class="card-title">{{ perso.nom }}</h5>
+						<p class="card-text">
+							{{ perso.nom }}<br/>
+							{{ perso.email }}<br/>
+							{{ perso.adresse }}<br/>
+							{{ perso.ville }}<br/>
+							{{ perso.code_postal }}<br/>
+							{{ perso.telephone }}<br/>
+						</p>
+					<a href="{% url 'editer' perso.id %}" class="btn btn-secondary">Editer</a>
+					</div>
+				</div>
+				<br/>
+			</div>
+
+		{% endfor %}
+	{% endif %}
+		
+</div></div>
 {% endblock %}

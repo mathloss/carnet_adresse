@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<center>
+		{% if searched %}
+			<h1>Vous recherchez : "{{ searched }}"</h1>
+			<br/>
+			{% for nom in noms %}
+				<div class="col-sm">
+					<div class="card" style="width: 18rem;">
+					    <div class="card-body">
+						    <h5 class="card-title">{{ nom }}</h5>
+						    <p class="card-text">
+						    	{{ nom.email }}<br/>
+								{{ nom.adresse }}<br/>			
+								{{ nom.ville }}<br/>
+								{{ nom.code_postal }}<br/>
+								{{ nom.telephone }}<br/>
+						    </p>
+						</div>
+					</div>
+					<br/>
+				</div>
+				<hr/>
+			{% endfor %}
+		{% else %}
+			<h1>Vous avez oubliez de remplir la barre de recherche...</h1>
+		{% endif %}	
+	<br/>
+	</center>
+{% endblock %} 

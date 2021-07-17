@@ -45,3 +45,13 @@ def effacer(request,list_id):
 		messages.success(request, ('Pas de suppression possible...'))
 		return redirect('home')
 
+def search_nom(request):
+	if request.method == "POST":
+		searched = request.POST.get('searched')
+		noms = Adresse.objects.filter(nom__contains=searched)		
+		return render(request, 'search_nom.html',{'searched':searched, 'noms':noms})
+	else:
+		return render(request, 'search_nom.html',{})
+
+
+
